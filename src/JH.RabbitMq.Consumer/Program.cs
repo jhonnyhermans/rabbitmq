@@ -56,8 +56,8 @@ namespace JH.RabbitMq.Consumer
                     autoAck: true,
                     consumer: consumer);
 
-                Console.WriteLine("Waiting for message...");
-                Console.WriteLine("Press a key to close");
+                Console.WriteLine("Aguardando mensagem...");
+                Console.WriteLine("Precione uma tecla para sair");
                 Console.ReadKey();
             }
         }
@@ -72,7 +72,7 @@ namespace JH.RabbitMq.Consumer
                 Data = result
             });
 
-            Console.WriteLine(string.Format("New message received:"));
+            Console.WriteLine(string.Format("Mensagem recebida:"));
       
         }
 

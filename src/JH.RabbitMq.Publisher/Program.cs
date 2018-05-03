@@ -19,8 +19,6 @@ namespace JH.RabbitMq.Publisher
          
         }
 
-
-
         static void Main(string[] args)
         {
             System.Threading.Thread.Sleep(5000);
@@ -88,14 +86,14 @@ namespace JH.RabbitMq.Publisher
                     }
 
 
-                    Console.WriteLine("message sent.");
+                    Console.WriteLine("Mensagem enviada.");
                     System.Threading.Thread.Sleep(5000);
                 }
 
             });
 
             //task.Wait();
-            Console.WriteLine("Press a key to exit.");
+            Console.WriteLine("Precione uma tecla para sair");
             Console.ReadKey();
         }
 
