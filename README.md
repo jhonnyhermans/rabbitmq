@@ -2,12 +2,10 @@
 # rabbitmq
 
 .Net Core, RabbitMQ in Docker
-JH.RabbitMq.Publisher
-
 #### JH.RabbitMq.Publisher  
-O app cosulta dados da API de previsão de tempo Advisor (https://advisor.climatempo.com.br/), publica o mensagem com o resultado pelo RabbitMQ.
+Cosulta dados da API de previsão de tempo Advisor (https://advisor.climatempo.com.br/), publica o mensagem com o resultado pelo RabbitMQ.
 #### JH.RabbitMq.Publisher
-O app recebe a mensagem publicada pelo JH.RabbitMq.Publisher, trata os dados e persiste em uma base de dados SQL Server.
+Recebe a mensagem publicada pelo JH.RabbitMq.Publisher, trata os dados e persiste em uma base de dados SQL Server.
 
 ### Instalação
 #1 - Instalar Docker - https://www.docker.com/docker-windows
