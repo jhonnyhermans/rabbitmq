@@ -25,6 +25,8 @@ namespace JH.RabbitMq.Infra.Data.Mappings
             builder.Property(u => u.Country)
                 .HasMaxLength(150);
 
+            builder.Ignore(u => u.Notifications);
+
             builder.ToTable("TemperatureDataStorage");
         }
     }

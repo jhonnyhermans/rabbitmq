@@ -70,7 +70,7 @@ namespace JH.RabbitMq.Consumer
             _persistDataAppService.PersistData(new PersistDataViewModel()
             {
                 Data = result
-            });
+            }, (string error) => Console.WriteLine("[ERRO] {0}",error));
 
             Console.WriteLine(string.Format("Mensagem recebida:"));
       

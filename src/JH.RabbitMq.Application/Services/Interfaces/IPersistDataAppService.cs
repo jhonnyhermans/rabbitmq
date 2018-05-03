@@ -8,6 +8,6 @@ namespace JH.RabbitMq.Application.Services.Interfaces
 
     public interface IPersistDataAppService : IAppService
     {
-        void PersistData(PersistDataViewModel viewModel);
+        void PersistData(PersistDataViewModel viewModel, Action <string> notifyError);
     }
 }

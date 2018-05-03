@@ -1,9 +1,11 @@
-﻿using JH.RabbitMq.Application.Services.Interfaces;
+﻿using FluentValidation.Results;
+using JH.RabbitMq.Application.Services.Interfaces;
 using JH.RabbitMq.Application.ViewModels;
 using JH.RabbitMq.Domain;
 using JH.RabbitMq.Domain.Services.Interfaces;
 using JH.RabbitMq.Domain.UoW;
 using System;
+using System.Linq;
 
 namespace JH.RabbitMq.Application.Services
 {
@@ -18,7 +20,7 @@ namespace JH.RabbitMq.Application.Services
             _historicService = historicService;
         }
 
-        public void PersistData(PersistDataViewModel viewModel)
+        public void PersistData(PersistDataViewModel viewModel, Action<string> notifyError)
         {
             var locale = viewModel.Data;
 
@@ -33,8 +35,9 @@ namespace JH.RabbitMq.Application.Services
 
                 if (data.IsValid())
                     _historicService.Add(data);
+                else
+                    data.Notifications.ToList().ForEach((ValidationFailure error) => notifyError(error.ErrorMessage));
 
-             
             }
 
 

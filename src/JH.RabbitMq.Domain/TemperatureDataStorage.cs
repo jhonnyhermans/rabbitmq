@@ -1,4 +1,7 @@
-﻿using System;
+﻿using FluentValidation.Results;
+using JH.RabbitMq.Domain.Validators;
+using System;
+using System.Collections.Generic;
 
 namespace JH.RabbitMq.Domain
 {
@@ -34,9 +37,15 @@ namespace JH.RabbitMq.Domain
             }
         }
 
+
+        public IList<ValidationFailure> Notifications { get; private set; }
+
         public bool IsValid()
         {
-            return true;
+            TemperatureDataStorageValidator validator = new TemperatureDataStorageValidator();
+            ValidationResult results = validator.Validate(this);
+            Notifications = results.Errors;
+            return results.IsValid;
         }
     }
 
