@@ -1,0 +1,9 @@
+version: '3'
+
+services:
+  jh.rabbitmq.api:
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    ports:
+      - "80"
+

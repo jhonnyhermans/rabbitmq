@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  jh.rabbitmq.publisher:
+    image: jhrabbitmqpublisher
+    build:
+      context: .
+      dockerfile: src/JH.RabbitMq.Publisher/Dockerfile
+
+  jh.rabbitmq.api:
+    image: jhrabbitmqapi
+    build:
+      context: .
+      dockerfile: src/JH.RabbitMq.Api/Dockerfile
+
